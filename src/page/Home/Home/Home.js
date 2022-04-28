@@ -9,8 +9,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Items></Items>
-            <div>
-                <img src={img} alt="" />
+            <div className='text-center'>
+                <img className='img-fluid' src={img} alt="" />
             </div>
             <Services></Services>
         </div>

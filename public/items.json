@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Porsche 911 Carrera 2017",
+        "price": "$96,100 (Negotiable)",
+        "quantity": 10,
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/jHPLXkL/item1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "2017 Audi A4 Quattro Premium",
+        "price": "$43,000",
+        "quantity": 10,
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/sWqnr97/item2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "2014 Ford Shelby GT500 Coupe",
+        "price": "$77,00",
+        "quantity": 10,
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/wYbFxxh/item3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "BMW I8 1.5 Auto 4X4 2dr",
+        "price": "$250",
+        "quantity": 10,
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/hBBRmVN/item4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Honda Civic 2017 Brand New",
+        "price": "$500",
+        "quantity": 10,
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/3cbdzTW/item5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "McLaren F1 Sports Car",
+        "price": "$18,200",
+        "quantity": 10,
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.ibb.co/5M8CBgf/item6.jpg"
+    }
+]

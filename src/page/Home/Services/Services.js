@@ -10,10 +10,10 @@ const Services = () => {
         <div className='w-100'>
             <h3>Services</h3>
             <div className="row">
-                <div className='col-md-5'>
+                <div className='col-md-6'>
                     <img className='img-fluid' src={img} alt="" />
                 </div>
-                <div className='col-md-7'>
+                <div className='col-md-6'>
                     <div>
                         <h3>Service</h3>
                     </div>

@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
     /* text-align: center; */
     justify-content: center;
     display: flex;
@@ -7,7 +7,7 @@
 
 }
 
-.login-item {
+.register-item {
     display: flex;
     justify-content: center;
     height: 550px;
@@ -18,12 +18,12 @@
     background-color: white;
 }
 
-.login-image {
+.register-image {
     display: flex;
     justify-content: center;
 }
 
-.login-image img {
+.register-image img {
     background-color: rgb(223, 221, 221);
     border-radius: 100px;
     align-items: center;
@@ -36,7 +36,7 @@
     width: 350px;
 }
 
-.login-btn {
+.register-btn {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -45,7 +45,7 @@
 }
 
 @media screen and (max-width: 430px) {
-    .login-item {
+    .register-item {
         width: 90%;
     }
 }

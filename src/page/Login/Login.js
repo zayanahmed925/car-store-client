@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.css';
 import profile from '../../image/icon_user.png';
 import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div className='login-container'>
@@ -31,7 +32,9 @@ const Login = () => {
                                 Login
                             </Button>
                         </Form>
+
                     </div>
+                    <p className='mt-3'>Don't have an account? <Link to='/register'>Register Now</Link></p>
                 </div>
             </div>
         </div>

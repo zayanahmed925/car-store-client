@@ -7,18 +7,34 @@ const Checkout = () => {
 
     const [items, setItems] = useProduct(productsId);
 
+    const handleAdd = (event) => {
+        event.preventDefault();
+        const quantity1 = parseInt(event.target.quantity.value);
+
+        const quantity = items.quantity + quantity1;
+        console.log(quantity)
+        const updatedQuantity = { quantity };
+
+        const url = `http://localhost:5000/product/${productsId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('users update successfully!!!');
+                event.target.reset();
+            })
+    }
+
     const handleDecrees = event => {
 
-        // event.preventDefault();
-        // const name = event.target.name.value;
-        // const email = event.target.email.value;
-        // const updatedUser = {name, email};
-        // send data to the server
         const quantity = items.quantity - 1;
-        // setItems(quantity);
         const updateQuantity = { quantity };
-
-
 
         const url = `http://localhost:5000/product/${productsId}`;
         fetch(url, {
@@ -49,6 +65,11 @@ const Checkout = () => {
                     <button onClick={handleDecrees} className='btn btn-primary'>Delivered</button>
                 </div>
             </div>
+            <br />
+            <form onSubmit={handleAdd}>
+                <input type="number" name="quantity" id="" placeholder='Add Quantity' />
+                <button type="submit">Add Quantity</button>
+            </form>
         </div>
     );
 };

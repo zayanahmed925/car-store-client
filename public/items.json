@@ -4,7 +4,8 @@
         "name": "Porsche 911 Carrera 2017",
         "price": "$96,100 (Negotiable)",
         "quantity": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "supplier": "Mercedes Benz",
+        "description": "Sitting atop the Mercedes-Benz SUV lineup is the posh and powerful 2022 GLS-class, which earns its place alongside other high-end Benzes with a technology-and-luxury-laden cabin.",
         "img": "https://i.ibb.co/jHPLXkL/item1.jpg"
     },
     {
@@ -12,7 +13,8 @@
         "name": "2017 Audi A4 Quattro Premium",
         "price": "$43,000",
         "quantity": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "supplier": "Audi AG",
+        "description": "Audi R8 performance Coupe rear-wheel drive tells you it is inspired by the racetrack. Its rear-wheel drive chassis—as well as its specifically engineered suspension and tuning—allows you to optimize power within its 562 HP V10 engine.",
         "img": "https://i.ibb.co/sWqnr97/item2.jpg"
     },
     {
@@ -20,7 +22,8 @@
         "name": "2014 Ford Shelby GT500 Coupe",
         "price": "$77,00",
         "quantity": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "supplier": "Shelby Mustang",
+        "description": "Before the Grand Wagoneer arrived, Jeep had never built an SUV so big and luxurious. Within its enormous shell are three rows and seating for up to eight, not to mention attractive materials and upscale features throughout.",
         "img": "https://i.ibb.co/wYbFxxh/item3.jpg"
     },
     {
@@ -28,7 +31,8 @@
         "name": "BMW I8 1.5 Auto 4X4 2dr",
         "price": "$250",
         "quantity": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "supplier": "BMW",
+        "description": "BMW boasts better driving manners as well as an impressive selection of engines. They range from a 375-hp turbo-six to a 523-hp twin-turbo V-8, with the latter making 630 horses on the highest-class, max-performance Alpina XB7.",
         "img": "https://i.ibb.co/hBBRmVN/item4.jpg"
     },
     {
@@ -36,7 +40,8 @@
         "name": "Honda Civic 2017 Brand New",
         "price": "$500",
         "quantity": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "supplier": "Honda",
+        "description": "Honda civic A selection of four-cylinder engines—including a turbocharged 1.5-liter—are offered; front-wheel drive will continue to be standard as Honda insists all-wheel drive is not part of the plan.",
         "img": "https://i.ibb.co/3cbdzTW/item5.jpg"
     },
     {
@@ -44,7 +49,35 @@
         "name": "McLaren F1 Sports Car",
         "price": "$18,200",
         "quantity": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "supplier": "McLaren Automotive",
+        "description": "Accelerate from standstill and the McLaren 570S Coupé will reach 100km/h (62mph) in just 3.2 seconds and get to 200km/h (124mph) in a staggering 9.5 seconds. ",
         "img": "https://i.ibb.co/5M8CBgf/item6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Audi A6 upgrade",
+        "price": "$17,100",
+        "quantity": 10,
+        "supplier": "Audi AG",
+        "description": "Audi A6 is the quintessential Audi luxury sedan, featuring a cabin stuffed with technology that’s expertly put together using premium materials. Models wearing the 45 designation are powered by a turbocharged four-cylinder.",
+        "img": "https://i.ibb.co/LY3StJz/item7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Ferrari Hybrid Sports",
+        "price": "$19,300",
+        "quantity": 10,
+        "supplier": "Ferrari S.p.A",
+        "description": "It's this rawness that made the F40 so spectacular.Engine 2.9L twin-turbo DOHC 32-valve V-8/471 hp @ 7,000 rpm, 426 lb-ft @ 4,000 rpm.",
+        "img": "https://i.ibb.co/1q7cyyt/item8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Rang Rover 2021",
+        "price": "$20,200",
+        "quantity": 10,
+        "supplier": "Land Rover",
+        "description": "The Range Rover is available with a trio of power trains, starting with a turbocharged inline-six with a 48-volt hybrid system dubbed P400 that develops 395 horsepower.",
+        "img": "https://i.ibb.co/z7N4FMd/item9.jpg"
     }
 ]

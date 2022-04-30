@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import useProduct from '../../Hooks/useProduct';
 
 const Item = ({ item }) => {
+    // const { productId } = useParams();
+    // const [items] = useProduct(productId);
     const navigate = useNavigate();
-    const { name, price, img, description, quantity } = item;
+    const { name, price, img, description, quantity, supplier, _id } = item;
 
 
     return (
@@ -14,8 +17,9 @@ const Item = ({ item }) => {
                     <h5 className="card-title">{name}</h5>
                     <p>{price}</p>
                     <p>Quantity: <small>{quantity}</small></p>
+                    <p>Supplier: {supplier}</p>
                     <p className="card-text">{description}</p>
-                    <Link to='/checkOut'>
+                    <Link to={`/product/${_id}`}>
                         <button className='btn btn-primary'>Update</button></Link>
                 </div>
             </div>

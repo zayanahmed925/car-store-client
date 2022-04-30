@@ -1,25 +1,60 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Login.css';
 import profile from '../../image/icon_user.png';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-const Login = () => {
+import SocialLogin from '../SocialLogin/SocialLogin';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
+const Login = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const navigate = useNavigate();
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-    const navigate = useNavigate()
-    const handleSubmit = (e) => {
-        const email = e.target.name.value;
-        const password = e.target.password.value;
-        signInWithEmailAndPassword(email, password);
-        navigate('/home')
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
+    const location = useLocation();
+
+    let errorElement;
+    if (error) {
+        errorElement =
+            <div style={{ color: 'red' }}>
+                <p>Error: {error?.message}</p>
+            </div>
+
     }
+    let from = location.state?.from?.pathname || "/";
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+        await signInWithEmailAndPassword(email, password);
+    }
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
+    const handleReset = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('Please Enter Your email');
+        }
+    }
+
     return (
         <div className='login-container'>
             <div className="login-item">
@@ -34,23 +69,26 @@ const Login = () => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" name='email' placeholder="Enter email" />
+                                <Form.Control ref={emailRef} type="email" name='email' placeholder="Enter email" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" name='password' placeholder="Password" />
+                                <Form.Control ref={passwordRef} type="password" name='password' placeholder="Password" />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-                            <Button className='login-btn mx-auto' variant="primary" type="submit">
+
+                            {errorElement}
+                            <Button className='login-btn mt-4 mx-auto' variant="primary" type="submit">
                                 Login
                             </Button>
                         </Form>
 
                     </div>
+
                     <p className='mt-3'>Don't have an account? <Link to='/register'>Register Now</Link></p>
+                    <p>Forget Password?  <a style={{ cursor: 'pointer' }} onClick={handleReset} className='text-primary  pe-auto '>Reset Password</a></p>
+                    <SocialLogin></SocialLogin>
+                    <ToastContainer />
                 </div>
             </div>
         </div>

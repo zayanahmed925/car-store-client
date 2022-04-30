@@ -5,13 +5,14 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import profile from '../../image/icon_user.png';
 import './Register.css';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -47,16 +48,14 @@ const Register = () => {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" name='password' placeholder="Password" />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Check me out" />
-                            </Form.Group>
-                            <Button className='register-btn mx-auto' variant="primary" type="submit">
+                            <Button className='register-btn mt-4 mx-auto' variant="primary" type="submit">
                                 Register
                             </Button>
                         </Form>
 
                     </div>
                     <p className='mt-3'>Already have an account? <Link to='/login'>Login</Link></p>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

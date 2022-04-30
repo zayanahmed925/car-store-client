@@ -1,19 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useProduct from '../Hooks/useProduct';
+
 const Checkout = () => {
     const { productsId } = useParams()
-    const [items] = useProduct(productsId);
-    console.log(items)
+
+    const [items, setItems] = useProduct(productsId);
+
+    const handleDecrees = event => {
+
+        // event.preventDefault();
+        // const name = event.target.name.value;
+        // const email = event.target.email.value;
+        // const updatedUser = {name, email};
+        // send data to the server
+        const quantity = items.quantity - 1;
+        // setItems(quantity);
+        const updateQuantity = { quantity };
+
+
+
+        const url = `http://localhost:5000/product/${productsId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('users update successfully!!!');
+
+            })
+    }
+
     return (
-        <div>
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+        <div className='container'>
+            <div className="card" style={{ width: '25rem' }}>
+                <img src={items.img} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{items.name}</h5>
+                    <p>Price: {items.price}</p>
+                    <p>Quantity: {items.quantity}</p>
+                    <p>Supplier: <small>{items.supplier}</small></p>
+                    <p className="card-text">{items.description}</p>
+                    <button onClick={handleDecrees} className='btn btn-primary'>Delivered</button>
+                </div>
             </div>
         </div>
     );

@@ -8,8 +8,8 @@ const useProduct = (productsId) => {
         fetch(`http://localhost:5000/product/${productsId}`)
             .then(res => res.json())
             .then(data => setItems(data))
-    }, [productsId])
-    return [items]
+    })
+    return [items, setItems];
 };
 
 export default useProduct;

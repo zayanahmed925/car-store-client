@@ -2,7 +2,8 @@
     /* text-align: center; */
     justify-content: center;
     display: flex;
-    padding: 90px 0 90px 0;
+    margin: 30px 0;
+    /* padding: 90px 0 90px 0; */
     background-color: rgb(252, 252, 252);
 
 }
@@ -10,8 +11,8 @@
 .addItem-items {
     display: flex;
     justify-content: center;
-    height: 580px;
-    width: 35%;
+    height: 810px;
+    width: 50%;
     box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
     padding-top: 30px;
     border-radius: 60px;
@@ -33,7 +34,7 @@
 }
 
 .form-container {
-    width: 350px;
+    width: 450px;
 }
 
 .addItem-btn {
@@ -47,5 +48,17 @@
 @media screen and (max-width: 430px) {
     .addItem-items {
         width: 90%;
+    }
+
+    .form-container {
+        width: 250px;
+    }
+
+    .addItem-btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width: 250px;
+
     }
 }

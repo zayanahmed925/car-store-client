@@ -2,8 +2,12 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './AddItem.css';
 import car from '../../image/icon_carwarehouse.png';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 const AddItem = () => {
+    const [user] = useAuthState(auth);
     const nameRef = useRef('');
+    const emailRef = useRef('');
     const priceRef = useRef('');
     const quantityRef = useRef('');
     const SupplierRef = useRef('');
@@ -12,12 +16,13 @@ const AddItem = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
+        const email = emailRef.current.value;
         const price = priceRef.current.value;
         const quantity = quantityRef.current.value;
         const supplier = SupplierRef.current.value;
         const description = descriptionRef.current.value;
         const img = imageRef.current.value;
-        const data = { name, price, quantity, supplier, description, img };
+        const data = { name, email, price, quantity, supplier, description, img };
         console.log({ name, price, quantity, supplier, description, img });
         const url = `http://localhost:5000/product`
         fetch(url, {
@@ -47,6 +52,10 @@ const AddItem = () => {
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Items Name</Form.Label>
                                 <Form.Control ref={nameRef} type="text" name='name' placeholder="Enter name" required />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Your Email</Form.Label>
+                                <Form.Control ref={emailRef} type="email" name='email' value={user?.email} placeholder="Enter Email" required readOnly />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Price</Form.Label>

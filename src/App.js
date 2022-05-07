@@ -11,6 +11,7 @@ import RequireAuth from './page/RequireAuth/RequireAuth';
 import Checkout from './page/Checkout/Checkout';
 import ManageItems from './page/manageItems/ManageItems';
 import AddItem from './page/AddItem/AddItem';
+import Blogs from './page/Blogs/Blogs';
 
 
 
@@ -30,8 +31,10 @@ function App() {
         <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/myItem' element={<MyItem></MyItem>}></Route>
         <Route path='/addItem' element={<AddItem></AddItem>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route></Route>
       </Routes>
       <Footer></Footer>
     </div >

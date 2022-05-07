@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useProduct from '../Hooks/useProduct';
 
 const Checkout = () => {
@@ -70,6 +70,11 @@ const Checkout = () => {
                 <input type="number" name="quantity" id="" placeholder='Add Quantity' />
                 <button type="submit">Add Quantity</button>
             </form>
+            <br />
+            <Link to='/manageItems'>
+                <button className="btn btn-primary">Manage Item</button>
+            </Link>
+
         </div>
     );
 };

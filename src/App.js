@@ -9,6 +9,7 @@ import Register from './page/Register/Register';
 import MyItem from './page/MyItem/MyItem';
 import RequireAuth from './page/RequireAuth/RequireAuth';
 import Checkout from './page/Checkout/Checkout';
+import ManageItems from './page/manageItems/ManageItems';
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Checkout></Checkout>
           </RequireAuth>
         }></Route>
+        <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
         <Route path='/myItem' element={<MyItem></MyItem>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>

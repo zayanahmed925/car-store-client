@@ -2,6 +2,7 @@ import React from 'react';
 
 const ManageItem = ({ item }) => {
     const { img, name, price, quantity, supplier, description } = item;
+    console.log(img)
     return (
         <div className="gy-3 col-sm-12 col-md-6 col-lg-4">
             <div className="card h-100">

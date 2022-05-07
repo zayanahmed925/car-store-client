@@ -1,0 +1,51 @@
+.addItem-container {
+    /* text-align: center; */
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    background-color: rgb(252, 252, 252);
+
+}
+
+.addItem-items {
+    display: flex;
+    justify-content: center;
+    height: 580px;
+    width: 35%;
+    box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
+    padding-top: 30px;
+    border-radius: 60px;
+    background-color: white;
+}
+
+.addItem-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.addItem-icon img {
+    background-color: rgb(223, 221, 221);
+    border-radius: 100px;
+    align-items: center;
+    padding: 7px;
+    border: 5px solid rgb(131, 127, 127);
+
+}
+
+.form-container {
+    width: 350px;
+}
+
+.addItem-btn {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 350px;
+
+}
+
+@media screen and (max-width: 430px) {
+    .addItem-items {
+        width: 90%;
+    }
+}

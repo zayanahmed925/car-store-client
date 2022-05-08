@@ -8,6 +8,8 @@ import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
+import axios from 'axios';
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -39,10 +41,14 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email })
+        console.log(data)
+        localStorage.setItem('accessToken', data.accessToken)
+        navigate(from, { replace: true });
     }
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
     const handleReset = async () => {
         const email = emailRef.current.value;

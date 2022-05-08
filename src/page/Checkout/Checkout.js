@@ -27,7 +27,6 @@ const Checkout = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
-                alert('users update successfully!!!');
                 event.target.reset();
             })
     }
@@ -48,7 +47,7 @@ const Checkout = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('success', data);
-                alert('users update successfully!!!');
+                alert('Are you sure want to delivered?');
 
             })
     }

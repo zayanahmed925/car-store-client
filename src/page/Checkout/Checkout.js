@@ -66,7 +66,7 @@ const Checkout = () => {
                     <p>Quantity: {items.quantity}</p>
                     <p>
                         {
-                            items.quantity < 0 ? <span style={{ color: 'red' }}>Stock Out</span> : <span style={{ color: 'green' }}>Stock In</span>
+                            items.quantity < 1 ? <span style={{ color: 'red' }}>Stock Out</span> : <span style={{ color: 'green' }}>Stock In</span>
                         }
                     </p>
                     <p>Supplier: <small>{items.supplier}</small></p>

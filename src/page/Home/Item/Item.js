@@ -18,9 +18,9 @@ const Item = ({ item }) => {
                     <p>{price}</p>
                     <p>Quantity: <small>{quantity}</small></p>
                     <p>Supplier: {supplier}</p>
-                    <p className="card-text">{description}</p>
+                    <p className="card-text">{description.slice(0, 100)}</p>
                     <Link to={`/product/${_id}`}>
-                        <button className='btn btn-primary'>Update</button></Link>
+                        <button className='book-btn d-block w-100 py-2 mx-auto'>Update</button></Link>
                 </div>
             </div>
         </div>

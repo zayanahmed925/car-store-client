@@ -1,0 +1,10 @@
+.header-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.header-container {
+    color: blueviolet;
+    background-color: rgb(26, 50, 64);
+}

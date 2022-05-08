@@ -1,0 +1,17 @@
+.item-container {
+    margin-top: 30px;
+
+}
+
+.quantity-form {
+    height: 35px;
+    /* background-color: gray; */
+    border: 3px solid rgb(52, 142, 216);
+}
+
+.manage-btn {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

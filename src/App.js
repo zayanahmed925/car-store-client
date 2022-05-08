@@ -2,7 +2,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Shared/Header/Header';
-import Footer from './Shared/Footer/Footer';
 import Home from './page/Home/Home/Home';
 import Login from './page/Login/Login';
 import Register from './page/Register/Register';
@@ -12,6 +11,7 @@ import Checkout from './page/Checkout/Checkout';
 import ManageItems from './page/manageItems/ManageItems';
 import AddItem from './page/AddItem/AddItem';
 import Blogs from './page/Blogs/Blogs';
+import NotFound from './Shared/NotFound/NotFound';
 
 
 
@@ -34,9 +34,9 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-      <Footer></Footer>
+
     </div >
   );
 }

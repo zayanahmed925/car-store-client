@@ -1,6 +1,7 @@
-li {
+.row li {
     list-style: none;
     /* display: inline-block; */
+    padding: 0;
 }
 
 .brake-icon img {
@@ -10,3 +11,22 @@ li {
     box-shadow: 2px 7px 8px gray;
 
 }
+
+.service-img img {
+    /* width: 50%; */
+}
+
+.service-item {
+    padding: 0;
+}
+
+.service-img:hover>img {
+    transform: translateX(30px) scale(1.1, 1.1);
+    transition: transform .70s linear;
+}
+
+/* @media only screen and (max-width: 480px) {
+    .notfound .notfound-404 {
+        height: 162px;
+    }
+} */

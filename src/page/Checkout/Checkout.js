@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useProduct from '../Hooks/useProduct';
+import './Checkout.css';
 
 const Checkout = () => {
     const { productsId } = useParams()
@@ -54,7 +55,25 @@ const Checkout = () => {
 
     return (
         <div className='container'>
-            <div className="card" style={{ width: '25rem' }}>
+            <div className='item-container row'>
+                <div className='col-md-6 col-12'>
+                    <img src={items.img} className="card-img-top" alt="..." />
+                </div>
+                <div className='item-details col-md-6 col-12'>
+                    <h5 className="card-title">{items.name}</h5>
+                    <p>Price: {items.price}</p>
+                    <p>Quantity: {items.quantity}</p>
+                    <p>Supplier: <small>{items.supplier}</small></p>
+                    <p className="card-text">{items.description}</p>
+                    <button onClick={handleDecrees} className='btn btn-danger me-2'>Delivered</button>
+                    <form onSubmit={handleAdd} style={{ display: 'inline-block' }}>
+                        <button className='btn btn-primary me-1' type="submit">Add Quantity</button>
+                        <input type="number" className='quantity-form' name="quantity" id="" placeholder='Add Quantity' required />
+
+                    </form>
+                </div>
+            </div>
+            {/* <div className="card" style={{ width: '25rem' }}>
                 <img src={items.img} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{items.name}</h5>
@@ -64,15 +83,15 @@ const Checkout = () => {
                     <p className="card-text">{items.description}</p>
                     <button onClick={handleDecrees} className='btn btn-primary'>Delivered</button>
                 </div>
-            </div>
+            </div> */}
             <br />
-            <form onSubmit={handleAdd}>
+            {/* <form onSubmit={handleAdd}>
                 <input type="number" name="quantity" id="" placeholder='Add Quantity' />
                 <button type="submit">Add Quantity</button>
-            </form>
+            </form> */}
             <br />
             <Link to='/manageItems'>
-                <button className="btn btn-primary">Manage Item</button>
+                <button className="btn btn-info mt-4 manage-btn mx-auto">Manage Item</button>
             </Link>
 
         </div>

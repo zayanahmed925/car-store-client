@@ -11,7 +11,7 @@ const MyItem = () => {
         const getItems = async () => {
             const email = user?.email;
             console.log(email)
-            const url = `http://localhost:5000/myItem?email=${email}`
+            const url = `https://pacific-bastion-40823.herokuapp.com/myItem?email=${email}`
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const MyItem = () => {
         console.log(id);
         const proceed = window.confirm('Are you sure want to Delete?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`
+            const url = `https://pacific-bastion-40823.herokuapp.com/product/${id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -41,8 +41,7 @@ const MyItem = () => {
     }
     return (
         <div>
-            <h2>My item: {items.length}</h2>
-            <div className='row'>
+            <div className='row' style={{ margin: '30px' }}>
                 {
                     items?.map(item => <div className="gy-3 col-sm-12 col-md-6 col-lg-4">
                         <div className="card h-100">
@@ -53,7 +52,7 @@ const MyItem = () => {
                                 <p>Quantity: <small>{item.quantity}</small></p>
                                 <p>Supplier: {item.supplier}</p>
                                 <p className="card-text">{item.description}</p>
-                                <button className='btn btn-danger' onClick={() => handleDelete(item._id)} >Delete</button>
+                                <button className='delete-btn w-100 py-2 mx-auto' onClick={() => handleDelete(item._id)} >Delete</button>
 
                             </div>
                         </div>

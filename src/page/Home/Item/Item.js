@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import useProduct from '../../Hooks/useProduct';
-
+import './item.css';
 const Item = ({ item }) => {
     // const { productId } = useParams();
     // const [items] = useProduct(productId);
@@ -18,9 +18,9 @@ const Item = ({ item }) => {
                     <p>{price}</p>
                     <p>Quantity: <small>{quantity}</small></p>
                     <p>Supplier: {supplier}</p>
-                    <p className="card-text">{description.slice(0, 100)}</p>
+                    <p className="card-text">{description.slice(0, 150)}<span className='fw-bold'>..Read more</span></p>
                     <Link to={`/product/${_id}`}>
-                        <button className='book-btn d-block w-100 py-2 mx-auto'>Update</button></Link>
+                        <button className=' book-btn w-100 py-2 mx-auto'>Update</button></Link>
                 </div>
             </div>
         </div>

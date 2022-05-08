@@ -9,6 +9,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const Login = () => {
@@ -41,7 +42,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email })
+        const { data } = await axios.post('https://pacific-bastion-40823.herokuapp.com/login', { email })
         console.log(data)
         localStorage.setItem('accessToken', data.accessToken)
         navigate(from, { replace: true });
@@ -49,6 +50,9 @@ const Login = () => {
 
     if (user) {
         // navigate(from, { replace: true });
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
     const handleReset = async () => {
         const email = emailRef.current.value;

@@ -1,0 +1,31 @@
+.delete-btn {
+    padding: 3px 7px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(216, 40, 40);
+}
+
+.addItem-btn {
+    background-color: rgb(40, 74, 94);
+    width: 250px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin: 30px 0;
+    padding: 7px 10px;
+}
+
+.addItem-btn:hover {
+    background-color: rgb(65, 124, 158);
+
+}
+
+.card {
+    background-color: rgba(15, 100, 150, 0.075);
+    border: none;
+    box-shadow: 7px 5px 7px 2px gray;
+    border-radius: 20px;
+    /* margin: 30px; */
+}

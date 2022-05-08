@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import profile from '../../image/icon_user.png';
 import './Register.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../../Shared/Loading/Loading';
 const Register = () => {
     const [
         createUserWithEmailAndPassword,
@@ -14,6 +15,9 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const navigate = useNavigate();
+    if (loading) {
+        return <Loading></Loading>
+    }
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name.value;

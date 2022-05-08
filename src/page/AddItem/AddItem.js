@@ -4,6 +4,7 @@ import './AddItem.css';
 import car from '../../image/icon_carwarehouse.png';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 const AddItem = () => {
     const [user] = useAuthState(auth);
     const nameRef = useRef('');
@@ -13,6 +14,7 @@ const AddItem = () => {
     const SupplierRef = useRef('');
     const descriptionRef = useRef('');
     const imageRef = useRef('');
+    const navigate = useNavigate()
     const handleSubmit = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
@@ -24,7 +26,7 @@ const AddItem = () => {
         const img = imageRef.current.value;
         const data = { name, email, price, quantity, supplier, description, img };
         console.log({ name, price, quantity, supplier, description, img });
-        const url = `http://localhost:5000/product`
+        const url = `https://pacific-bastion-40823.herokuapp.com/product`
         fetch(url, {
             method: 'POST',
             headers: {
@@ -36,6 +38,7 @@ const AddItem = () => {
             .then(result => {
                 console.log(result);
             })
+        navigate('/manageItems');
     }
     return (
         <div className='addItem-container'>
@@ -59,28 +62,28 @@ const AddItem = () => {
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Price</Form.Label>
-                                <Form.Control ref={priceRef} type="number" name='price' placeholder="Enter Price" />
+                                <Form.Control ref={priceRef} type="number" name='price' placeholder="Enter Price" required />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Quantity</Form.Label>
-                                <Form.Control ref={quantityRef} type="number" name='quantity' placeholder="Enter Quantity" />
+                                <Form.Control ref={quantityRef} type="number" name='quantity' placeholder="Enter Quantity" required />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Supplier Name</Form.Label>
-                                <Form.Control ref={SupplierRef} type="text" name='supplier name' placeholder="Enter Supplier name" />
+                                <Form.Control ref={SupplierRef} type="text" name='supplier name' placeholder="Enter Supplier name" required />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Description</Form.Label>
-                                <Form.Control as="textarea" style={{ height: '100px' }} ref={descriptionRef} type="text" name='description' placeholder="Enter Description" />
+                                <Form.Control as="textarea" style={{ height: '100px' }} ref={descriptionRef} type="text" name='description' placeholder="Enter Description" required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Image URL</Form.Label>
-                                <Form.Control ref={imageRef} type="text" name='img' placeholder="Enter Image URL" />
+                                <Form.Control ref={imageRef} type="text" name='img' placeholder="Enter Image URL" required />
                             </Form.Group>
 
                             <Button className='addItem-btn mt-4 mx-auto' variant="primary" type="submit">
-                                Login
+                                Add Item
                             </Button>
                         </Form>
 

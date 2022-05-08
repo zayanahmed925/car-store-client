@@ -1,0 +1,18 @@
+.book-btn {
+    background-color: rgb(40, 74, 94);
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.book-btn:hover {
+    background-color: rgb(65, 124, 158);
+
+}
+
+.card {
+    background-color: rgba(15, 100, 150, 0.075);
+    border: none;
+    box-shadow: 7px 5px 7px 2px gray;
+    border-radius: 20px;
+}

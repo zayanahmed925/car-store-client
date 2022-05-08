@@ -5,7 +5,7 @@ const useProduct = (productsId) => {
 
     const [items, setItems] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${productsId}`)
+        fetch(`https://pacific-bastion-40823.herokuapp.com/product/${productsId}`)
             .then(res => res.json())
             .then(data => setItems(data))
     })

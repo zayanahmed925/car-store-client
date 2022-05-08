@@ -3,6 +3,23 @@
 
 }
 
+.delivered-btn {
+    padding: 3px 7px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(209, 9, 9);
+}
+
+.add-btn {
+    padding: 3px 7px;
+    border: none;
+    color: white;
+    background-color: rgb(17, 122, 241);
+    border-radius: 5px;
+}
+
 .quantity-form {
     height: 35px;
     /* background-color: gray; */
@@ -10,8 +27,15 @@
 }
 
 .manage-btn {
-    width: 300px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    background-color: rgb(40, 74, 94);
+    width: 250px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+
+}
+
+.manage-btn:hover {
+    background-color: rgb(65, 124, 158);
+
 }

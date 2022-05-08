@@ -16,7 +16,7 @@ const Checkout = () => {
         console.log(quantity)
         const updatedQuantity = { quantity };
 
-        const url = `http://localhost:5000/product/${productsId}`;
+        const url = `https://pacific-bastion-40823.herokuapp.com/product/${productsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -37,7 +37,7 @@ const Checkout = () => {
         const quantity = items.quantity - 1;
         const updateQuantity = { quantity };
 
-        const url = `http://localhost:5000/product/${productsId}`;
+        const url = `https://pacific-bastion-40823.herokuapp.com/product/${productsId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -61,38 +61,25 @@ const Checkout = () => {
                 </div>
                 <div className='item-details col-md-6 col-12'>
                     <h5 className="card-title">{items.name}</h5>
+                    <p>ID: <small>{items._id}</small></p>
                     <p>Price: {items.price}</p>
                     <p>Quantity: {items.quantity}</p>
                     <p>Supplier: <small>{items.supplier}</small></p>
                     <p className="card-text">{items.description}</p>
-                    <button onClick={handleDecrees} className='btn btn-danger me-2'>Delivered</button>
+                    <button onClick={handleDecrees} className=' delivered-btn me-2'>Delivered</button>
                     <form onSubmit={handleAdd} style={{ display: 'inline-block' }}>
-                        <button className='btn btn-primary me-1' type="submit">Add Quantity</button>
+                        <button className='add-btn me-1' type="submit">Add Quantity</button>
                         <input type="number" className='quantity-form' name="quantity" id="" placeholder='Add Quantity' required />
 
                     </form>
+                    <Link to='/manageItems'>
+                        <button className="mt-4 manage-btn mx-auto py-2 px-5 ">Manage Item</button>
+                    </Link>
                 </div>
+
             </div>
-            {/* <div className="card" style={{ width: '25rem' }}>
-                <img src={items.img} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">{items.name}</h5>
-                    <p>Price: {items.price}</p>
-                    <p>Quantity: {items.quantity}</p>
-                    <p>Supplier: <small>{items.supplier}</small></p>
-                    <p className="card-text">{items.description}</p>
-                    <button onClick={handleDecrees} className='btn btn-primary'>Delivered</button>
-                </div>
-            </div> */}
             <br />
-            {/* <form onSubmit={handleAdd}>
-                <input type="number" name="quantity" id="" placeholder='Add Quantity' />
-                <button type="submit">Add Quantity</button>
-            </form> */}
-            <br />
-            <Link to='/manageItems'>
-                <button className="btn btn-info mt-4 manage-btn mx-auto">Manage Item</button>
-            </Link>
+
 
         </div>
     );

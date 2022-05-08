@@ -9,34 +9,34 @@ const Banner = () => {
         <Carousel fade>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 img-fluid"
                     src={banner1}
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
+
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 img-fluid"
                     src={banner2}
                     alt="Second slide"
                 />
 
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
+
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                    className="d-block w-100"
+                    className="d-block w-100 img-fluid"
                     src={banner3}
                     alt="Third slide"
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
+
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

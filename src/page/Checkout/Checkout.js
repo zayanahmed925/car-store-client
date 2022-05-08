@@ -64,6 +64,11 @@ const Checkout = () => {
                     <p>ID: <small>{items._id}</small></p>
                     <p>Price: {items.price}</p>
                     <p>Quantity: {items.quantity}</p>
+                    <p>
+                        {
+                            items.quantity < 0 ? <span style={{ color: 'red' }}>Stock Out</span> : <span style={{ color: 'green' }}>Stock In</span>
+                        }
+                    </p>
                     <p>Supplier: <small>{items.supplier}</small></p>
                     <p className="card-text">{items.description}</p>
                     <button onClick={handleDecrees} className=' delivered-btn me-2'>Delivered</button>
